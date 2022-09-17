@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ProEventos.API.Data;
-using ProEventos.API.Models;
+using ProEventos.Domain.Models;
 
 namespace ProEventos.API.Controllers;
 
@@ -24,7 +24,7 @@ public class EventoController : ControllerBase
     [HttpGet("{id}")]
     public IEnumerable<Evento> GetById(int id)
     {
-        return _context.Eventos.Where(evento => evento.EventoID == id);
+        return _context.Eventos.Where(evento => evento.Id == id);
     }
     
     [HttpPost]

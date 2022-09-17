@@ -24,4 +24,24 @@
       <ProjectReference Include="..\..\ProEventos.Application\ProEventos.Application.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Models\**" />
+      <Compile Remove="sql\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Models\**" />
+      <EmbeddedResource Remove="sql\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Models\**" />
+      <None Remove="sql\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Models\**" />
+      <Content Remove="sql\**" />
+    </ItemGroup>
+
 </Project>
