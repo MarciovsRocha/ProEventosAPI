@@ -27,21 +27,25 @@
     <ItemGroup>
       <Compile Remove="Models\**" />
       <Compile Remove="sql\**" />
+      <Compile Remove="Data\Migrations\**" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="Models\**" />
       <EmbeddedResource Remove="sql\**" />
+      <EmbeddedResource Remove="Data\Migrations\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="Models\**" />
       <None Remove="sql\**" />
+      <None Remove="Data\Migrations\**" />
     </ItemGroup>
 
     <ItemGroup>
       <Content Remove="Models\**" />
       <Content Remove="sql\**" />
+      <Content Remove="Data\Migrations\**" />
     </ItemGroup>
 
 </Project>
