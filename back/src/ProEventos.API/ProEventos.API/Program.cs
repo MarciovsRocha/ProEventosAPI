@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using ProEventos.Application;
+using ProEventos.Application.Contract;
+using ProEventos.Persistence;
 using ProEventos.Persistence.Context;
+using ProEventos.Persistence.Contract;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +12,10 @@ builder.Services.AddDbContext<ProEventosContext>(
     context => context.UseSqlite(builder.Configuration.GetConnectionString("Default"))
 );
 builder.Services.AddControllers();
+// adicionado escopop para Injeção de Dependências
+builder.Services.AddScoped<IGeralPersist, GeralPersist>();
+builder.Services.AddScoped<IEventoPersist, EventoPersist>();
+builder.Services.AddScoped<IEventoService, EventoService>();
 builder.Services.AddCors();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
