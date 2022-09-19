@@ -45,7 +45,7 @@ public class PalestrantePersist : IPalestrantePersist
         return await query.ToArrayAsync();
     }
 
-    public async Task<Palestrante> GetPalestranteByIdAsync(int PalestranteId, bool includeEventos = false)
+    public async Task<Palestrante?> GetPalestranteByIdAsync(int PalestranteId, bool includeEventos = false)
     {
         IQueryable<Palestrante> query = _context.Palestrantes
             .Include(p => p.RedesSociais);

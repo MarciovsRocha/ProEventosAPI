@@ -46,7 +46,7 @@ public class EventoPersist : IEventoPersist
         return await query.ToArrayAsync();
     }
 
-    public async Task<Evento> GetEventoByIdAsync(int EventoId, bool includePalestrantes = false)
+    public async Task<Evento?> GetEventoByIdAsync(int EventoId, bool includePalestrantes = false)
     {
         IQueryable<Evento> query = _context.Eventos
             .Include(e => e.Lote)
