@@ -11,7 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ProEventosContext>(
     context => context.UseSqlite(builder.Configuration.GetConnectionString("Default"))
 );
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+                .AddNewtonsoftJson(
+                    x => x.SerializerSettings.ReferenceLoopHandling 
+                        = Newtonsoft.Json.ReferenceLoopHandling.Ignore    
+                );
 // adicionado escopop para Injeção de Dependências
 builder.Services.AddScoped<IGeralPersist, GeralPersist>();
 builder.Services.AddScoped<IEventoPersist, EventoPersist>();
