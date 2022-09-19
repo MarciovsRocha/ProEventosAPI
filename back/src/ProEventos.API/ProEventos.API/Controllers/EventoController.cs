@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using ProEventos.Persistence;
+using ProEventos.Persistence.Context;
 using ProEventos.Domain.Models;
 
 namespace ProEventos.API.Controllers;
